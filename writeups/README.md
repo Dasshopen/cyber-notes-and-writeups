@@ -2,6 +2,7 @@
 
 ## Web
 
+- [Webpack — Exposition de source maps](web/webpack-sourcemap-exposure.md) — challenge validé par l'auteur.
 - [GhostNotes — Flask et SQLite](web/ghostnotes.md)
 - [PostgreSQL, session Flask et templates](web/postgresql-flask.md) — récit partiel.
 - [Prototype pollution et contexte JavaScript](web/prototype-pollution.md) — investigation incomplète.

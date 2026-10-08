@@ -6,6 +6,11 @@ Mini-lab pédagogique montrant pourquoi les **source maps Webpack exposées en p
 > d'une résolution de challenge.
 > Il ne contient aucun flag, secret réel, identifiant de challenge ou contenu provenant d'une plateforme tierce.
 
+Le récit de résolution est présenté séparément dans le
+[write-up Webpack](../../../writeups/web/webpack-sourcemap-exposure.md).
+Ce mini-lab illustre le mécanisme avec des données fictives ; il n'est pas
+le challenge et ne prétend pas reproduire sa validation.
+
 ## Objectif
 
 Comprendre le chemin suivant :
