@@ -8,6 +8,7 @@ Le contenu est rédigé en français. Les flags sont remplacés par `[REDACTED]`
 - [Write-ups](writeups/README.md) : contexte, démarche, observations et bilan des challenges.
 - [Fiches pratiques](notes/README.md) : méthodes, outils et rappels.
 - [Notes de cours](courses/README.md) : synthèses organisées par sujet.
+- [Labs](labs/README.md) : démonstrations locales avec données fictives.
 
 ## Lire les write-ups
 
@@ -18,8 +19,9 @@ signifie pas que le challenge n'a pas été résolu, mais que sa résolution n'e
 entièrement documentée dans le texte disponible.
 
 Les commandes sont des extraits de travail, pas une garantie de reproductibilité.
-Aucune commande ni aucun script de ce dossier n'a été exécuté pendant la préparation
-éditoriale. Les adresses présentes dans les cas d'étude sont des éléments historiques,
+Les commandes de résolution des write-ups n'ont pas été exécutées pendant la préparation
+éditoriale. Les labs peuvent comporter des tests locaux distincts, documentés dans leur
+README. Les adresses présentes dans les cas d'étude sont des éléments historiques,
 pas des cibles à contacter.
 
 ## Cadre d'utilisation
