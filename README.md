@@ -1,7 +1,7 @@
 # Cyber Notes & Write-ups
 
 Notes personnelles de cybersécurité et retours d'expérience sur des challenges CTF.
-Le contenu est rédigé en français. Les flags sont remplacés par `[REDACTED]`.
+Le contenu est principalement rédigé en français ; l'étude JavaScript Obfuscation Analysis est en anglais. Les flags sont remplacés par `[REDACTED]`.
 
 ## Parcourir le dossier
 
@@ -21,7 +21,8 @@ entièrement documentée dans le texte disponible.
 Les commandes sont des extraits de travail, pas une garantie de reproductibilité.
 Les commandes de résolution des write-ups n'ont pas été exécutées pendant la préparation
 éditoriale. Les labs peuvent comporter des tests locaux distincts, documentés dans leur
-README. Les adresses présentes dans les cas d'étude sont des éléments historiques,
+README. L'étude JavaScript Obfuscation Analysis documente également des vérifications
+locales sur des exemples pédagogiques reconstruits. Les adresses présentes dans les cas d'étude sont des éléments historiques,
 pas des cibles à contacter.
 
 ## Cadre d'utilisation
@@ -34,5 +35,6 @@ cours ne remplacent ni une documentation officielle ni un avis juridique.
 
 Les captures et les PDF ne sont pas inclus. Les étapes qui dépendaient uniquement
 de ces supports sont signalées comme incomplètes. Les exemples n'ont pas fait
-l'objet d'un rejeu technique indépendant et certaines notes de cours contiennent
+l'objet d'un rejeu technique indépendant, sauf vérifications explicitement documentées,
+et certaines notes de cours contiennent
 des points explicitement indiqués comme restant à vérifier.
