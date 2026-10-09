@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">Schéma pédagogique : message stocké et réception d'un marqueur fictif</title>
+  <desc id="desc">Un auteur de test publie un message stocké. Sa restitution dans le navigateur d'un visiteur ou lecteur automatisé exécute un marqueur fictif. Le chargement HTTPS traverse un frontal public, un tunnel SSH, puis rejoint le serveur Python sur Kali. Aucune identité de lecteur n'est démontrée par ce schéma.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#475569"/></marker></defs>
+  <rect width="1100" height="620" fill="#f8fafc"/>
+  <g font-family="Arial, sans-serif" fill="#0f172a">
+    <text x="50" y="48" font-size="25" font-weight="bold">Stored XSS — trajet d'un marqueur fictif</text>
+    <text x="50" y="78" font-size="16" fill="#475569">Schéma explicatif créé pour le write-up ; aucune capture ni donnée réelle.</text>
+    <g fill="#fff" stroke="#94a3b8" stroke-width="2">
+      <rect x="50" y="135" width="250" height="105" rx="12"/>
+      <rect x="425" y="135" width="250" height="105" rx="12"/>
+      <rect x="800" y="135" width="250" height="105" rx="12"/>
+      <rect x="800" y="345" width="250" height="105" rx="12"/>
+      <rect x="425" y="345" width="250" height="105" rx="12"/>
+      <rect x="50" y="345" width="250" height="105" rx="12"/>
+    </g>
+    <g font-size="18" text-anchor="middle">
+      <text x="175" y="171" font-weight="bold">Auteur de test</text><text x="175" y="199">(rôle attaquant simulé)</text><text x="175" y="225" font-size="15">Message de démonstration</text>
+      <text x="550" y="171" font-weight="bold">Forum de laboratoire</text><text x="550" y="199">Message enregistré</text><text x="550" y="225" font-size="15">Puis restitué sans protection adaptée</text>
+      <text x="925" y="171" font-weight="bold">Navigateur du lecteur</text><text x="925" y="199">Visiteur ou lecteur automatisé</text><text x="925" y="225" font-size="15">Son propre contexte de session</text>
+      <text x="925" y="383" font-weight="bold">Frontal public HTTPS</text><text x="925" y="413">Réception du marqueur</text><text x="925" y="439" font-size="15">Port public 443</text>
+      <text x="550" y="383" font-weight="bold">Tunnel SSH actif</text><text x="550" y="413">Client SSH sur Kali</text><text x="550" y="439" font-size="15">Redirection vers le service local</text>
+      <text x="175" y="383" font-weight="bold">Serveur Python sur Kali</text><text x="175" y="413">localhost:8000</text><text x="175" y="439" font-size="15">Journalise le marqueur XSS_OK</text>
+    </g>
+    <g stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arrow)">
+      <path d="M305 185H415"/><path d="M680 185H790"/><path d="M925 245V335"/>
+      <path d="M795 395H685"/><path d="M420 395H310"/>
+    </g>
+    <g font-size="14" fill="#475569" text-anchor="middle">
+      <text x="360" y="164">Publication</text><text x="735" y="164">Affichage</text>
+      <text x="735" y="375">Connexion SSH</text><text x="360" y="375">Connexion locale</text>
+      <text x="925" y="285">Requête d'image</text><text x="925" y="306">marqueur fixe uniquement</text>
+    </g>
+    <text x="50" y="520" font-size="17" font-weight="bold">Trois phases distinctes : stockage → restitution → exécution</text>
+    <text x="50" y="553" font-size="16" fill="#475569">Un log local confirme une réception ; il ne prouve pas à lui seul l'identité ou les privilèges du lecteur.</text>
+    <text x="50" y="581" font-size="16" fill="#475569">Aucun cookie, jeton, domaine d'instance ou tunnel actif n'est représenté.</text>
+  </g>
+</svg>
