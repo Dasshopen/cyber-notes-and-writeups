@@ -2,6 +2,7 @@
 
 ## Web
 
+- [Stored XSS — forum de test](web/stored-xss-forum/README.md) — étude pédagogique, marqueur fictif, diagnostic HTTP/SSH et limites des preuves.
 - [JavaScript Obfuscation Analysis](web/javascript-obfuscation-analysis/README.md) — étude pédagogique en anglais, exemples reconstruits et vérifiés localement.
 - [Webpack — Exposition de source maps](web/webpack-sourcemap-exposure.md) — challenge validé par l'auteur.
 - [GhostNotes — Flask et SQLite](web/ghostnotes.md)
