@@ -2,7 +2,7 @@
 
 > **Laboratoire autorisé.** Cette étude décrit un exercice pédagogique sur un forum de test. Le nom exact de l'épreuve, son URL, les données de session et les éléments de validation sont omis. Les exemples publics utilisent uniquement des marqueurs fictifs. Ils ne doivent être reproduits que dans une application locale ou un laboratoire explicitement autorisé.
 
-Ce document s'appuie sur mon compte rendu d'analyse. Les captures historiques ne sont pas disponibles dans ce dossier : leurs emplacements sont indiqués sans fabriquer d'images. Les explications générales et les recommandations sont distinguées des observations rapportées. La préparation de ce write-up ne constitue pas un nouveau test du service.
+Cette étude s'appuie sur les observations de mon parcours de laboratoire. Les recommandations sont distinguées des résultats effectivement obtenus.
 
 ## 1. Résumé
 
@@ -70,10 +70,6 @@ L'inspecteur montrait cet élément :
 
 Le `span` est un élément de présentation. Son texte ne démontre pas comment les autorisations sont contrôlées. Le modifier dans DevTools ne transforme pas une session en session administrateur. De même, l'indicateur de lecture ne fournit pas une preuve indépendante de l'identité ou des privilèges du lecteur.
 
-> 📸 **Capture à ajouter — `images/01-forum-interface.png`.** Cadrer le formulaire, `Posted messages` et le statut. Annoter « surface d'injection ». Masquer le domaine exact, la barre d'adresse et toute information personnelle.
-
-> 📸 **Capture à ajouter — `images/02-html-status.png`.** Cadrer uniquement le `span` dans l'inspecteur. Annoter « rôle affiché ≠ privilèges ». Exclure toute donnée de session.
-
 ## 5. Démonstration de l'exécution
 
 Dans le champ `Message` du laboratoire autorisé, j'ai utilisé une démonstration sans donnée sensible :
@@ -91,8 +87,6 @@ Après l'envoi, l'application affichait « message enregistré / content saved �
 | Nouvelle alerte après une nouvelle visite | Le contenu reste restitué et exécutable | Le message est stocké dans une technologie de base de données précise |
 
 Une inspection historique des cookies dans mon navigateur n'affichait que deux cookies d'analytics. Leurs valeurs ne sont pas reproduites. Cette observation était propre à ce contexte de visite.
-
-> 📸 **Capture à ajouter — `images/03-xss-alert.png`.** Utiliser de préférence une capture réelle de l'alerte `XSS_OK`. Si la capture historique affiche des cookies, caviarder intégralement leur contenu et les détails de l'instance ; préciser qu'il s'agit d'une capture assainie.
 
 ### Inspection dans la console Firefox
 
@@ -144,8 +138,6 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 
 Le serveur intégré sert des fichiers et journalise les requêtes. Il **n'exécute pas PHP** : nommer une URL `cookie.php` ne crée pas un collecteur PHP. Aucun script PHP ni backend de collecte n'a été mis en place dans cette description. Ce serveur de démonstration n'est pas un serveur de production. Référence : [documentation Python — `http.server`](https://docs.python.org/3/library/http.server.html).
 
-> 📸 **Capture à ajouter — `images/04-http-server.png`.** Montrer la commande Python et la ligne d'écoute. Masquer les noms de machine, chemins personnels et autres terminaux sensibles.
-
 ### 7.2 Ouvrir le tunnel dans un second terminal
 
 Avec le serveur toujours actif, j'ai utilisé :
@@ -180,8 +172,6 @@ Serveur HTTP Python et journal des requêtes
 ```
 
 Il ne faut pas ajouter `:8000` à l'URL HTTPS publique. Ce port appartient au dernier maillon local. Les terminaux Python et SSH doivent rester actifs pendant le test. Une ancienne adresse n'est pas une preuve de tunnel encore ouvert.
-
-> 📸 **Capture à ajouter — `images/05-ssh-tunnel.png`.** Montrer la commande et la confirmation de redirection. Masquer intégralement l'URL temporaire, les informations de connexion et le QR code éventuel.
 
 ![Schéma pédagogique du flux du marqueur](images/07-flow-diagram.svg)
 
@@ -272,7 +262,7 @@ Cet extrait est limité à un marqueur de laboratoire. Il ne lit pas de cookie e
 127.0.0.1 - - [08/Oct/2026 15:14:55] "GET /test?message=XSS_OK HTTP/1.1" 404 -
 ```
 
-Cette ligne est fournie par le compte rendu ; elle n'a pas été produite à nouveau pendant la rédaction. L'horodatage est repris tel quel, sans fuseau connu.
+Cette ligne provient du compte rendu de laboratoire. L'horodatage est repris tel quel, sans fuseau connu.
 
 | Partie | Interprétation |
 | --- | --- |
@@ -285,8 +275,6 @@ Cette ligne est fournie par le compte rendu ; elle n'a pas été produite à nou
 
 La ligne étaye la réception du marqueur au niveau du serveur. `127.0.0.1` n'est **pas** l'IP du navigateur extérieur ni une preuve d'identité du bot. L'adresse du pair local est normale dans ce trajet de tunnel.
 
-> 📸 **Capture à ajouter — `images/06-request-logs.png`.** Montrer les requêtes fictives `bonjour` et `XSS_OK`, puis uniquement les traces historiques assainies si elles sont conservées. Annoter « 404 : chemin absent, requête reçue » et « 200 : réponse servie ». Caviarder toutes les valeurs de cookies, l'URL d'instance et les détails d'identification. Ne jamais laisser apparaître un secret dans une autre ligne du terminal.
-
 ## 10. Contexte du lecteur automatisé et limites d'attribution
 
 Le compte rendu décrit, dans une capture ultérieure, deux requêtes associées aux cookies d'analytics du navigateur local, puis une requête comportant un paramètre nommé `ADMIN_COOKIE`. Le seul extrait public retenu est cette représentation assainie :
@@ -296,7 +284,7 @@ GET /?c=[COOKIES_ANALYTICS_MASQUÉS] HTTP/1.1 200
 GET /?c=ADMIN_COOKIE=[REDACTED] HTTP/1.1 200
 ```
 
-Ces lignes ne sont pas un relevé brut complet. La première représente la famille des requêtes d'analytics, sans reproduire leurs deux valeurs. L'adresse du pair, les valeurs et les autres détails sensibles sont omis. Aucun secret n'a été importé pour la rédaction.
+Ces lignes ne sont pas un relevé brut complet. La première représente la famille des requêtes d'analytics, sans reproduire leurs deux valeurs. L'adresse du pair, les valeurs et les autres détails sensibles sont omis.
 
 La différence observée est **compatible** avec la visite automatisée prévue par le scénario, dont le contexte pouvait différer du mien. Mais un nom de paramètre ne prouve ni son origine, ni un rôle administrateur effectif, ni la validité d'un jeton. Un journal de requêtes, seul, n'authentifie pas le navigateur émetteur. Le statut `200` indique une réponse HTTP réussie, pas une authentification réussie.
 
@@ -419,7 +407,6 @@ Enfin, j'ai retenu que les anciennes entrées persistent et perturbent les nouve
 - [MDN — `Document.location`](https://developer.mozilla.org/en-US/docs/Web/API/Document/location)
 - [curl — manuel des options](https://curl.se/docs/manpage.html)
 - [OpenSSH — commande `ssh`](https://man.openbsd.org/ssh)
-- [Plan des captures et consignes d'assainissement](images/README.md)
 
 ## 14. Checklist de reproduction avec données fictives
 
@@ -449,4 +436,4 @@ Cette checklist concerne une maquette locale ou un laboratoire autorisé et neuf
 | Différence de contexte compatible avec le lecteur prévu | Valeur, validité et réutilisation d'une session non publiées |
 | Erreurs réseau comprises par maillon | Cause universelle des 502 non établie |
 
-La démonstration documentée établit un comportement de XSS stockée dans le laboratoire et une réception de marqueur non sensible. La validation officielle d'une épreuve n'est pas revendiquée. Les captures historiques restent à ajouter après assainissement ; les recommandations de correction restent à tester sur une maquette autorisée.
+La démonstration documentée établit un comportement de XSS stockée dans le laboratoire et une réception de marqueur non sensible. La validation officielle d'une épreuve n'est pas revendiquée. Les recommandations de correction restent à tester sur une maquette autorisée.
